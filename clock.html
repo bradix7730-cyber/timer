@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="countdown"></p>
+    <p id="datetime"></p>
+
+    <script>
+        function showDateTime()
+        {
+            document.getElementById("datetime").textContent = new Date().toLocaleString();
+        }
+
+        setInterval(showDateTime, 1000);
+        showDateTime(); 
+
+        let secondsLeft = 60;
+        function runCountdown(){
+            const countdownDisplay = document.getElementById("countdown");
+
+            if(secondsLeft > 0){
+               countdownDisplay.textContent = `Time remaining: ${secondsLeft} seconds`;
+               secondsLeft--;
+
+            }else{
+              countdownDisplay.textContent ="Time is up!";
+            }
+            
+        }
+        setInterval(runCountdown, 1000);
+        runCountdown();
+
+    </script>
+</body>
+</html>
